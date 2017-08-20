@@ -54,10 +54,7 @@ body,
 }
 
 .content {
-    width: 100%;
-    min-height: 100%;
-    padding-bottom: 92px;
-    background-color: $white-d;
+    padding: 60px;
 }
 
 .container {
@@ -286,6 +283,8 @@ body,
 
 // HEADER SECTION
 @import "content/navigation";
+@import "content/phones_navigation";
+@import "content/write_us";
 @media screen and (max-width: 1024px) and (min-width: 769px) {
     section,
     nav {

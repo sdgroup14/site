@@ -260,10 +260,7 @@ body,
   height: 100%; }
 
 .content {
-  width: 100%;
-  min-height: 100%;
-  padding-bottom: 92px;
-  background-color: #f7f9fc; }
+  padding: 60px; }
 
 .container {
   max-width: 1024px;
@@ -444,6 +441,48 @@ body,
         text-decoration: underline; }
     .navigation li:first-of-type {
       margin-left: 0; }
+
+.phones-navigation {
+  background: #D3D0D0;
+  padding: 5px 50px 5px; }
+  .phones-navigation li {
+    display: inline-block;
+    margin: 0 10px;
+    color: #000000; }
+    .phones-navigation li a {
+      padding: 0 10px;
+      line-height: 30px;
+      font-size: 1.2rem;
+      font-weight: 400; }
+      .phones-navigation li a:hover {
+        text-decoration: underline; }
+    .phones-navigation li:first-of-type {
+      margin-left: 0; }
+
+.write-us h1 {
+  margin-bottom: 25px; }
+
+.write-us input {
+  display: block;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #7A7A7A;
+  color: #7A7A7A;
+  font-size: 1.2rem;
+  line-height: 1.2; }
+
+.write-us textarea {
+  display: block;
+  margin-bottom: 15px;
+  border: 1px solid #7A7A7A;
+  color: #7A7A7A;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  height: 70px; }
+
+.write-us button {
+  padding: 10px;
+  line-height: 15px;
+  border: 1px solid #7A7A7A; }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   section,

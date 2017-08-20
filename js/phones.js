@@ -1,50 +1,52 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('icreations.capabilities', ['ngRoute', 'ngAnimate'])
-    .config(['$routeProvider', config])
-    .controller('CapabilitiesCtrl', CapabilitiesCtrl);
+    angular
+        .module('test.phones', ['ui.router'])
+        .config(['$stateProvider', '$urlRouterProvider', config])
+        .controller('PhonesCtrl', PhonesCtrl);
 
-  CapabilitiesCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
+    PhonesCtrl.$inject = ['$scope'];
 
-  function CapabilitiesCtrl($scope, $rootScope, $timeout) {
-    $rootScope.CurrentPath = 'capabilities';
-    $rootScope.title = 'iCreations - Capabilities';
-
-    $rootScope.$on("$routeChangeSuccess", function() {
-      $('html, body').stop().animate({ scrollTop: 0 }, 150);
-    });
-    // $scope.anim = "r-animate-to-left";
-
-    $rootScope.$on('$routeChangeStart',
-      function(event, next, current) {
-
-        $rootScope.loadder = true;
-        $('#loader').attr('src', '../img/loader.svg');
-
-      });
-
-    $rootScope.$on('$routeChangeSuccess',
-      function(event, next, current) {
-                if (states.indexOf(current.$$route.controller) < states.indexOf(next.$$route.controller)) {
-          $rootScope.back = false;
-        } else {
-          $rootScope.back = true;
-        }
-        $rootScope.loadder = false;
-        $('#loader').attr('src', '');
-      });
-
-  };
+    function PhonesCtrl($scope) {
+        $scope.items = [{
+                name: 'Nokia',
+                url: 'phones.nokia'
+            },
+            {
+                name: 'HTC',
+                url: 'phones.htc'
+            },
+            {
+                name: 'Apple',
+                url: 'phones.apple'
+            }
+        ];
+    };
 
 
-  function config($routeProvider) {
-    $routeProvider.
-    when('/capabilities', {
-      templateUrl: '../views/content/capabilities.html',
-      controller: 'CapabilitiesCtrl'
-    });
-
-  };
+    function config($stateProvider, $urlRouterProvider) {
+      $urlRouterProvider.when('/phones', '/phones/nokia');
+      $urlRouterProvider.when('phones', '/phones/nokia');
+      $urlRouterProvider.otherwise("/phones");
+        $stateProvider
+            .state('phones', {
+                url: '/phones',
+                templateUrl: '../views/pages/phones/phones.html',
+                abstract: true,
+                controller: PhonesCtrl
+            })
+            .state('phones.nokia', {
+                url: '/nokia',
+                templateUrl: '../views/pages/phones/phones.nokia.html',
+            })
+            .state('phones.htc', {
+                url: '/htc',
+                templateUrl: '../views/pages/phones/phones.htc.html',
+            })
+            .state('phones.apple', {
+                url: '/apple',
+                templateUrl: '../views/pages/phones/phones.apple.html',
+            });
+    };
 })();

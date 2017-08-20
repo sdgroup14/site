@@ -1,0 +1,6 @@
+<ul class="phones-navigation" ng-controller="PhonesCtrl as phonesCtrl">
+    <li ng-repeat="item in phonesCtrl.items" class="phones-navigation-item"><a href="" ui-sref="{{item.url}}">{{item.name}}</a></li>
+</ul>
+<div class="content">
+	<div ui-view></div>
+</div>
