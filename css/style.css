@@ -484,6 +484,24 @@ body,
   line-height: 15px;
   border: 1px solid #7A7A7A; }
 
+.phones-mark-h {
+  color: red; }
+
+.phones-mark {
+  background: #D3D0D0;
+  padding: 5px 50px 5px; }
+  .phones-mark li {
+    display: block;
+    margin: 0 10px;
+    color: #000000; }
+    .phones-mark li a {
+      padding: 0 10px;
+      line-height: 30px;
+      font-size: 1.2rem;
+      font-weight: 400; }
+      .phones-mark li a:hover {
+        text-decoration: underline; }
+
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   section,
   nav {

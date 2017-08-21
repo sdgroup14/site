@@ -15,7 +15,22 @@
 
     function Config($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise('/main');
-                $locationProvider.html5Mode({
+
+        $stateProvider
+            .state('root', {
+            	abstract: true,
+            	views: {
+            		'@': {
+            			templateUrl: '../views/root.html'
+            		},
+            		'navbar@root': {
+            			template: '<navigation></navigation>'
+            		}
+            	}
+            })
+
+        
+          $locationProvider.html5Mode({
           enabled: true,
           requireBase: false
         });

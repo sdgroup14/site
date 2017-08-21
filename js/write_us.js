@@ -6,21 +6,22 @@
         .config(['$stateProvider', config])
         .controller('WriteUsCtrl', WriteUsCtrl);
 
-    WriteUsCtrl.$inject = ['$scope'];
+    WriteUsCtrl.$inject = ['$scope', '$rootScope'];
 
-    function WriteUsCtrl($scope) {
+    function WriteUsCtrl($scope, $rootScope) {
+        $rootScope.pageTitle = 'Test - Write us';
         $scope.submitForm = function() {
             console.log(JSON.stringify($scope.form));
             $scope.form = {
-                name: null,
-                text: null
+                userName: null,
+                userText: null
             };
         }
     };
 
     function config($stateProvider) {
         $stateProvider
-            .state('write_us', {
+            .state('root.write_us', {
                 url: '/write_us',
                 templateUrl: '../views/pages/write_us.html'
             })

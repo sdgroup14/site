@@ -6,47 +6,63 @@
         .config(['$stateProvider', '$urlRouterProvider', config])
         .controller('PhonesCtrl', PhonesCtrl);
 
-    PhonesCtrl.$inject = ['$scope'];
+    PhonesCtrl.$inject = ['$scope', '$rootScope', '$http'];
 
-    function PhonesCtrl($scope) {
+    function PhonesCtrl($scope, $rootScope, $http) {
+        $rootScope.pageTitle = 'Test - Phones';
         $scope.items = [{
                 name: 'Nokia',
-                url: 'phones.nokia'
+                url: 'nokia'
             },
             {
                 name: 'HTC',
-                url: 'phones.htc'
+                url: 'htc'
             },
             {
                 name: 'Apple',
-                url: 'phones.apple'
+                url: 'apple'
             }
         ];
+
+        console.log($scope.items[0].name);
+        
+        $http({
+            method: 'get',
+            url: '../json/phones.json'
+        }).then(function(response) {
+            var nokia = response.data.nokia;
+            var htc = response.data.htc;
+            var apple = response.data.apple;
+            $scope.nokiaData = nokia;
+            $scope.htcData = htc;
+            $scope.appleData = apple;
+        }, function(error) {
+            console.log(error);
+        });
     };
 
 
     function config($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.when('/phones', '/phones/nokia');
-      $urlRouterProvider.when('phones', '/phones/nokia');
-      $urlRouterProvider.otherwise("/phones");
         $stateProvider
-            .state('phones', {
+            .state('root.phones', {
                 url: '/phones',
                 templateUrl: '../views/pages/phones/phones.html',
-                abstract: true,
                 controller: PhonesCtrl
             })
-            .state('phones.nokia', {
+            .state('nokia', {
                 url: '/nokia',
-                templateUrl: '../views/pages/phones/phones.nokia.html',
+                parent: 'root.phones',
+                templateUrl: '../views/pages/phones/phones.nokia.html'
             })
-            .state('phones.htc', {
+            .state('htc', {
                 url: '/htc',
-                templateUrl: '../views/pages/phones/phones.htc.html',
+                parent: 'root.phones',
+                templateUrl: '../views/pages/phones/phones.htc.html'
             })
-            .state('phones.apple', {
+            .state('apple', {
                 url: '/apple',
-                templateUrl: '../views/pages/phones/phones.apple.html',
-            });
+                parent: 'root.phones',
+                templateUrl: '../views/pages/phones/phones.apple.html'
+            })
     };
 })();

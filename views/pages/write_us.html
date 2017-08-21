@@ -1,8 +1,8 @@
 <div class="content write-us" ng-controller="WriteUsCtrl as writeUsCtrl">
 	<h1>Write US</h1>
     <form name="myForm" ng-submit="submitForm()" novalidate>
-        <input ng-model="form.name" placeholder="Name" required/>
-        <textarea name="" id="" cols="30" rows="10" ng-model="form.text" required placeholder="txt messege"></textarea>
+        <input ng-model="form.userName" placeholder="Name" required/>
+        <textarea name="" id="" cols="30" rows="10" ng-model="form.userText" required placeholder="txt messege"></textarea>
         <button ng-disabled="myForm.$invalid">Send</button>
     </form>
 </div>

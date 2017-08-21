@@ -17,18 +17,18 @@
     NavCtrl.$inject = ['$scope'];
 
     function NavCtrl($scope) {
-        var ctrl_this = this; 
+        var ctrl_this = this;
         ctrl_this.nav_items = [{
                 name: 'Main',
-                url: 'main'
+                url: 'root.main'
             },
             {
                 name: 'Phones',
-                url: 'phones'
+                url: 'root.phones'
             },
             {
                 name: 'Write us',
-                url: 'write_us'
+                url: 'root.write_us'
             }
         ];
     };
