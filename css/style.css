@@ -26,6 +26,8 @@ figure {
   margin: 0; }
 
 hr {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
   overflow: visible; }
@@ -44,6 +46,8 @@ a:active, a:hover {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  -moz-text-decoration: underline dotted;
   text-decoration: underline dotted; }
 
 b, strong {
@@ -119,6 +123,8 @@ fieldset {
   padding: 0.35em 0.625em 0.75em; }
 
 legend {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: inherit;
   display: table;
@@ -134,6 +140,8 @@ textarea {
   overflow: auto; }
 
 [type="checkbox"], [type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0; }
 
@@ -279,6 +287,9 @@ h1 {
       line-height: 30px;
       font-size: 1.2rem;
       text-transform: uppercase;
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      -moz-transition: all .3s ease;
       transition: all .3s ease; }
       .navigation li a:hover {
         color: #24B374; }
@@ -289,6 +300,10 @@ h1 {
           position: absolute;
           bottom: -10px;
           left: 50%;
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
           transform: translateX(-50%);
           content: '';
           width: 13px;
@@ -368,5 +383,3 @@ h1 {
       margin-left: 5px; }
     .phones-mark li .price {
       margin-left: 25px; }
-
-/*# sourceMappingURL=style.css.map */

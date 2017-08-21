@@ -41,6 +41,7 @@
 
 
   function config($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/main');
     $stateProvider
       .state('root.phones', {
         url: '/phones',
@@ -50,7 +51,8 @@
       .state('nokia', {
         url: '/nokia',
         parent: 'root.phones',
-        templateUrl: '../views/pages/phones/phones.nokia.html'
+        templateUrl: '../views/pages/phones/phones.nokia.html',
+        authenticate: true
       })
       .state('htc', {
         url: '/htc',

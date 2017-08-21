@@ -8,7 +8,7 @@
     .directive('navigation', function() {
       return {
         restrict: 'E',
-        templateUrl: 'views/navigation.html',
+        templateUrl: '/views/navigation.html',
         replace: true,
         controller: NavCtrl
       }
