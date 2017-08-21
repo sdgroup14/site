@@ -1,6 +1,7 @@
 .phones-navigation {
   background: #D3D0D0;
   padding: 5px 50px 5px;
+  text-align: center;
   li {
     display: inline-block;
     margin: 0 10px;
@@ -15,9 +16,6 @@
       &:hover {
         text-decoration: underline;
       }
-    }
-    &:first-of-type {
-      margin-left: 0;
     }
   }
 }

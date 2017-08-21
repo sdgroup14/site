@@ -1,5 +1,5 @@
 <header>
 	<ul class="navigation" ng-controller="NavCtrl as navCtrl">
-	    <li ng-repeat="item in navCtrl.nav_items" class="navigation-item"><a ui-sref="{{item.url}}">{{item.name}}</a></li>
+	    <li ng-repeat="item in navCtrl.nav_items" class="navigation-item"><a ui-sref="{{item.url}}" ui-sref-active="active">{{item.name}}</a></li>
 	</ul>
 </header>

@@ -7,7 +7,7 @@
         'test.nav',
         'test.main',
         'test.phones',
-        'test.writeUs'
+        'test.feedback'
     ])
     .config(Config);
 

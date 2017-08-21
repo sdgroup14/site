@@ -2,14 +2,14 @@
     'use strict';
 
     angular
-        .module('test.writeUs', ['ui.router'])
+        .module('test.feedback', ['ui.router'])
         .config(['$stateProvider', config])
-        .controller('WriteUsCtrl', WriteUsCtrl);
+        .controller('FeedbackCtrl', FeedbackCtrl);
 
-    WriteUsCtrl.$inject = ['$scope', '$rootScope'];
+    FeedbackCtrl.$inject = ['$scope', '$rootScope'];
 
-    function WriteUsCtrl($scope, $rootScope) {
-        $rootScope.pageTitle = 'Test - Write us';
+    function FeedbackCtrl($scope, $rootScope) {
+        $rootScope.pageTitle = 'Test - Feedback';
         $scope.submitForm = function() {
             console.log(JSON.stringify($scope.form));
             $scope.form = {
@@ -21,9 +21,9 @@
 
     function config($stateProvider) {
         $stateProvider
-            .state('root.write_us', {
-                url: '/write_us',
-                templateUrl: '../views/pages/write_us.html'
+            .state('root.feedback', {
+                url: '/feedback',
+                templateUrl: '../views/pages/feedback.html'
             })
 
     };

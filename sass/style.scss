@@ -53,10 +53,15 @@ body {
 }
 
 .content {
-    padding: 60px;
+    padding: 35px 0;
+}
+
+h1 {
+    text-align: center;
+    color: #545454;
 }
 
 @import "content/navigation";
 @import "content/phones_navigation";
-@import "content/write_us";
+@import "content/feedback";
 @import "content/phones";
