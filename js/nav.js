@@ -18,8 +18,6 @@
 
   function NavCtrl($scope, $location) {
     var ctrl_this = this;
-
-
     ctrl_this.nav_items = [{
         name: 'Main',
         url: 'root.main'
@@ -34,8 +32,6 @@
       }
     ];
   };
-
-
 
   function config() {};
 })();

@@ -10,6 +10,7 @@
 
   function PhonesCtrl($scope, $rootScope, $http) {
     $rootScope.pageTitle = 'Test - Phones';
+
     $scope.items = [{
         name: 'Nokia',
         url: 'nokia'
@@ -37,8 +38,8 @@
     }, function(error) {
       console.log(error);
     });
-  };
 
+  };
 
   function config($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/main');
@@ -65,4 +66,5 @@
         templateUrl: '../views/pages/phones/phones.apple.html'
       })
   };
+
 })();
