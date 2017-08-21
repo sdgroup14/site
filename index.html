@@ -6,27 +6,38 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, maximum-scale=1.0">
   <meta http-equiv="cleartype" content="on">
+
+<!-- START INCLUDE CSS FILES -->
+
   <!-- build:remove -->
   <link href="/css/style.css" rel="stylesheet">
   <!-- /build -->
   <!-- build:include ../templates/css-link.html -->
   <!-- /build -->
-  <title ng-bind='pageTitle'></title>
-</head>
 
-<body>
-  <div ui-view></div>
+<!-- END INCLUDE CSS FILES -->
+
+<!-- START INCLUDE ANGULAR JS FILES -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
   <!-- build:remove -->
   <script src="/js/app.js"></script>
   <script src="/js/nav.js"></script>
-  <script src="/js/main.js"></script>
-  <script src="/js/phones.js"></script>
-  <script src="/js/feedback.js"></script>
+  <script src="/js/pages/main.js"></script>
+  <script src="/js/pages/phones.js"></script>
+  <script src="/js/pages/feedback.js"></script>
   <!-- /build -->
+
   <!-- build:include ../templates/js-script.html -->
   <!-- /build -->
-</body>
 
+<!-- END INCLUDE ANGULAR JS FILES -->
+
+  <title ng-bind='pageTitle'></title>
+</head>
+
+<body>
+  <div ui-view></div>
+</body>
 </html>
